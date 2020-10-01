@@ -7,7 +7,7 @@ namespace TurboPotato.Sql
 {
     class DatabaseContext : DbContext
     {
-        public DbSet<User> Users { get; set; }
+        public DbSet<Person> Persons { get; set; }
         public DbSet<Group> Groups { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
