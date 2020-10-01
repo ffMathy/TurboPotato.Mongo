@@ -1,0 +1,47 @@
+version: "3.4"
+
+services:
+  turbo-mssql:
+    image: "mcr.microsoft.com/mssql/server"
+    environment:
+        SA_PASSWORD: "Your_password123"
+        ACCEPT_EULA: "Y"
+    ports:
+      - "1433:1433"
+
+  turbo-mongo-primary:
+    image: bitnami/mongodb:4.2.9-debian-10-r5
+    container_name: turbo-mongo-primary
+    ports:
+      - "27017:27017"
+    environment:
+      MONGODB_DATABASE: "mydatabase"
+      MONGODB_REPLICA_SET_MODE: "primary"
+      MONGODB_ADVERTISED_HOSTNAME: "turbo-mongo-primary"
+      MONGODB_ROOT_PASSWORD: "Your_password123"
+      MONGODB_REPLICA_SET_KEY: "somekey"
+    tmpfs: /data/db
+
+  turbo-mongo-secondary:
+    image: bitnami/mongodb:4.2.9-debian-10-r5
+    container_name: turbo-mongo-secondary
+    environment:
+      MONGODB_REPLICA_SET_MODE: "secondary"
+      MONGODB_ADVERTISED_HOSTNAME: "turbo-mongo-secondary"
+      MONGODB_PRIMARY_HOST: "turbo-mongo-primary"
+      MONGODB_PRIMARY_PORT_NUMBER: "27017"
+      MONGODB_PRIMARY_ROOT_PASSWORD: "Your_password123"
+      MONGODB_REPLICA_SET_KEY: "somekey"
+    tmpfs: /data/db
+
+  turbo-mongo-arbiter:
+    image: bitnami/mongodb:4.2.9-debian-10-r5
+    container_name: turbo-mongo-arbiter
+    environment:
+      MONGODB_REPLICA_SET_MODE: "arbiter"
+      MONGODB_ADVERTISED_HOSTNAME: "turbo-mongo-arbiter"
+      MONGODB_PRIMARY_HOST: "turbo-mongo-primary"
+      MONGODB_PRIMARY_PORT_NUMBER: "27017"
+      MONGODB_PRIMARY_ROOT_PASSWORD: "Your_password123"
+      MONGODB_REPLICA_SET_KEY: "somekey"
+    tmpfs: /data/db

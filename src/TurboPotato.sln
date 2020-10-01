@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30503.244
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TurboPotato.NoSql", "TurboPotato.NoSql\TurboPotato.NoSql.csproj", "{CCCAB65D-775E-41D0-80A8-03BB042AB041}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TurboPotato.Sql", "TurboPotato.Sql\TurboPotato.Sql.csproj", "{79FFE3D8-20E5-43FD-8D57-54B88145D845}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CCCAB65D-775E-41D0-80A8-03BB042AB041}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCCAB65D-775E-41D0-80A8-03BB042AB041}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCCAB65D-775E-41D0-80A8-03BB042AB041}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCCAB65D-775E-41D0-80A8-03BB042AB041}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79FFE3D8-20E5-43FD-8D57-54B88145D845}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79FFE3D8-20E5-43FD-8D57-54B88145D845}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79FFE3D8-20E5-43FD-8D57-54B88145D845}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79FFE3D8-20E5-43FD-8D57-54B88145D845}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4142771F-C756-458E-97C2-A483EF0FC46E}
+	EndGlobalSection
+EndGlobal
