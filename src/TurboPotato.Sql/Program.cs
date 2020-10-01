@@ -34,5 +34,10 @@ namespace TurboPotato.Sql
         {
             await using var context = new DatabaseContext();
         }
+
+        private static void Create(DatabaseContext context)
+        {
+
+        }
     }
 }
