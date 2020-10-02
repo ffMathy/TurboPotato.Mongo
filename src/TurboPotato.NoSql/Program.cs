@@ -9,11 +9,6 @@ namespace TurboPotato.NoSql
 {
     public class Person
     {
-        public ObjectId Id { get; set; }
-
-        public Group Group { get; set; }
-        public Guid GroupId { get; set; }
-
         public string Name { get; set; }
         public int Age { get; set; }
     }
@@ -121,7 +116,8 @@ namespace TurboPotato.NoSql
                 {
                     new Person()
                     {
-                        Name = "John"
+                        Name = "John",
+                        Age = 1337
                     }
                 }
             });
@@ -148,7 +144,7 @@ namespace TurboPotato.NoSql
                     "Some new group description"));
             
             await collection.UpdateOneAsync(
-                group => group.Description == "Some group description",
+                group => group.Description == "Some new group description",
                 Builders<Group>.Update.Set(
                     group => group.Description,
                     "Some group description"));

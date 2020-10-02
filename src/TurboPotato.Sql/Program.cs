@@ -113,7 +113,8 @@ namespace TurboPotato.Sql
                 Description = "Some group description",
                 Persons = new List<Person>() {
                     new Person() {
-                        Name = "John"
+                        Name = "John",
+                        Age = 1337
                     }
                 }
             });
